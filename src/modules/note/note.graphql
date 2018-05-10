@@ -1,3 +1,18 @@
 type Query {
-    text(msg : String!) : String
+  text(msg: String!): String
+}
+
+input noteInput {
+  title: String!
+  content: String!
+}
+
+type note {
+  id: String
+  title: String
+  content: String
+}
+
+type Mutation {
+  createNote(input: noteInput): note
 }
